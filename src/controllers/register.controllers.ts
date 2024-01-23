@@ -8,6 +8,7 @@ export async function register(req: Request, res: Response){
     try {
         const {name, userMail, userPassword, userAge, isStudent} = req.body
         const isRegister = await verifyIsRegister({userMail})
+        console.log(isRegister)
         if(isRegister){
             return res.status(400).json("User already exist")
         }

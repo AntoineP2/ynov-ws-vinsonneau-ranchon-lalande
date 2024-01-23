@@ -22,8 +22,7 @@ export async function login(req: Request, res: Response){
             isStudent: userInfo.isStudent
         }
         const token = jwt.sign({userInfo : userInfoToken}, "mdpSecret", { expiresIn: '24h'})
-        var decoded = jwt.verify(token, 'mdpSecret');
-        return res.status(200).json(decoded)
+        return res.status(200).json(token)
     } catch (error) {
         return res.status(400).json("Error here")
     }

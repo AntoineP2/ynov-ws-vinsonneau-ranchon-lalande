@@ -5,5 +5,5 @@ import { register } from "../controllers/register.controllers";
 
 export const authRouter = Router();
 
-authRouter.route("/login").get(login);
-authRouter.route("/register").get(register);
+authRouter.route("/login").post(login);
+authRouter.route("/register").post(register);

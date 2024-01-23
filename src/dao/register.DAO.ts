@@ -32,7 +32,7 @@ export async function verifyIsRegister({userMail}) {
             },
           })
         await prisma.$disconnect()
-        return true
+        return user
     } catch (e) {
         console.error(e)
         await prisma.$disconnect()
