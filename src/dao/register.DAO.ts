@@ -13,10 +13,11 @@ export async function registerDao({name, userMail, userPassword, userAge, isStud
                 password: userPassword,
                 age: userAge,
                 isStudent: isStudent
+                
             },
           })
         await prisma.$disconnect()
-        return user
+        return true
     } catch (e) {
         console.error(e)
         await prisma.$disconnect()
